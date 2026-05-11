@@ -32,12 +32,9 @@ public class BaseClass {
 		driver = new ChromeDriver(options);
 		
 		}else if(br.equalsIgnoreCase("firefox")) {
-		
 			FirefoxOptions options = new FirefoxOptions();
-			options.addArguments("disable-features=PasswordManagerEnabled");
-			options.addArguments("disable-features=PasswordLeakDetection");
-			options.addArguments("disable-features=AutofillServerCommunication");
-			options.addArguments("disable-features=AutofillEnableAccountWalletStorage");
+			options.addArguments("--headless");
+
 			driver = new FirefoxDriver(options);
 		}else {
 			return;
