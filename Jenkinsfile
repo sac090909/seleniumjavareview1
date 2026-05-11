@@ -50,7 +50,7 @@ pipeline {
             steps {
                 echo "Archiving reports and screenshots"
                 archiveArtifacts artifacts: 'target/surefire-reports/**', fingerprint: true
-                archiveArtifacts artifacts: 'screenshots/**', fingerprint: true
+               archiveArtifacts artifacts: 'screenshots/**', allowEmptyArchive: true
             }
         }
     }
