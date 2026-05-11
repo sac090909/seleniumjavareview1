@@ -26,10 +26,16 @@ pipeline {
             }
         }
 
+		stage('Maven Clean Install') {
+            steps {
+                bat 'mvn clean install -DskipTests'
+            }
+        }
+        
         stage('Execute TestNG Suite') {
             steps {
                 echo "Running TestNG tests"
-                sh 'mvn clean test'
+                bat 'mvn test'
             }
         }
 
